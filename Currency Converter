@@ -1,0 +1,18 @@
+rates = {
+    "USD": 1,
+    "EUR": 0.9,
+    "EGP": 50,
+    "GBP": 0.78
+}
+
+print("Available currencies: USD, EUR, EGP, GBP")
+
+from_currency = input("Convert from: ").upper()
+to_currency = input("Convert to: ").upper()
+amount = float(input("Enter amount: "))
+
+if from_currency in rates and to_currency in rates:
+    result = amount / rates[from_currency] * rates[to_currency]
+    print(f"{amount} {from_currency} = {result:.2f} {to_currency}")
+else:
+    print("Currency not supported.")
